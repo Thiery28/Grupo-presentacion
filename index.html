@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APUS Team - Ingeniería de Sistemas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #fdbb2d;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .team-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .member-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .member-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-name {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #fdbb2d;
+        }
+        
+        .member-role {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #fdbb2d;
+            transform: scale(1.1);
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #1a2a6c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .floating-btn:hover {
+            background: #fdbb2d;
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .team-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fdbb2d;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .member-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#" class="floating-btn">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <div class="container">
+        <header>
+            <h1>APUS TEAM</h1>
+            <p class="subtitle">Ingeniería de Sistemas - Grupo de Desarrollo</p>
+            <p class="team-description">Somos un equipo de estudiantes de Ingeniería de Sistemas apasionados por la tecnología, innovación y desarrollo de soluciones creativas. Juntos formamos APUS Team, combinando nuestras habilidades para alcanzar la excelencia.</p>
+        </header>
+        
+        <div class="team-grid">
+            <!-- BRAD -->
+            <div class="member-card">
+                <img src="https://i.ibb.co/kVcx3dV6/image.jpg" alt="Brad" class="member-img">
+                <div class="member-info">
+                    <h2 class="member-name">Brad Carlos huaman Cruz</h2>
+                    <p class="member-role">iNTEGRANTE 1</p>
+                    <p class="member-role">75927801@continental.edu.pe</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FRANCO -->
+            <div class="member-card">
+                <img src="https://i.ibb.co/JWfYhRPD/image.jpg" alt="Franco" class="member-img">
+                <div class="member-info">
+                    <h2 class="member-name">Franco luis Mansilla Huayhua</h2>
+                    <p class="member-role">iNTEGRANTE 2</p>     
+                    <p class="member-role">75738753@continental.edu.pe</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- THIERY -->
+            <div class="member-card">
+                <img src="https://i.ibb.co/N67jGpNg/image.jpg" alt="Thiery" class="member-img">
+                <div class="member-info">
+                    <h2 class="member-name">Thiery Henry Vargas Polo</h2>
+                    <p class="member-role">INTEGRANTE 3</p>
+                   <p class="member-role">73985455@continental.edu.pe</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RODRIGO -->
+            <div class="member-card">
+                <img src="https://i.ibb.co/MkdxkxGj/image.jpg" alt="Rodrigo" class="member-img">
+                <div class="member-info">
+                    <h2 class="member-name">Rodrigo Turpo Ordoñez</h2>
+                    <p class="member-role">INTEGRANTE 4</p>
+                    <p class="member-role">76380651@continental.edu.pe</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ISAAC -->
+            <div class="member-card">
+                <img src="https://i.ibb.co/Gf9RgPNb/image.jpg" alt="Isaac" class="member-img">
+                <div class="member-info">
+                    <h2 class="member-name">Aderly isaac Quispe Chavez</h2>
+                    <p class="member-role">INTEGRANTE 5</p>
+                    <p class="member-role">73987712@continental.edu.pe</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="team-logo">APUS TEAM</div>
+            <p>© 2025 APUS Team - Ingeniería de Sistemas. Todos los derechos reservados.</p>
+            <p>Innovando para un futuro mejor</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll para el botón flotante
+        document.querySelector('.floating-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mostrar/ocultar botón flotante based on scroll position
+        window.addEventListener('scroll', function() {
+            const floatingBtn = document.querySelector('.floating-btn');
+            if (window.scrollY > 300) {
+                floatingBtn.style.display = 'flex';
+            } else {
+                floatingBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
